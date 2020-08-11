@@ -1,0 +1,82 @@
+class Node():
+
+    def __init__(self, data):
+        self.data = data
+        self.left_child = None
+        self.right_child = None
+
+
+#Binary Tree algorithms
+root = None
+
+
+def insert(data):
+    global root
+    new_node = Node(data)
+    if root == None:
+        root = new_node
+    else:
+        current = root
+        while True:
+            if new_node.data < current.data:
+                if current.left_child == None:
+                    current.left_child = new_node
+                    return
+                else:
+                    current = current.left_child
+            else:
+                if current.right_child == None:
+                    current.right_child = new_node
+                    return
+                else:
+                    current = current.right_child
+
+def printTree():
+    global root
+    if root == None:
+        print("Empty Tree")
+    else:
+        #left of root 
+        current = root.left_child
+        while current != None:
+            print(current.data, end=" ")
+            if current.left_child != None:
+                current = current.left_child
+            else:
+                current = current.right_child
+
+        #root
+        print(root.data, end=" ")
+
+        #right of root
+        current = root.right_child
+        while current != None:
+            print(current.data, end=" ")
+            if current.right_child != None:
+                current = current.right_child
+            else:
+                current = current.left_child
+
+def main():
+    insert(5)
+    printTree()
+    insert(4)
+    insert(6)
+    insert(1)
+    insert(40)
+    insert(3)
+    insert(8)
+    printTree()
+    
+
+if __name__ == "__main__":
+    main()
+            
+        
+        
+        
+        
+        
+    
+    
+        
