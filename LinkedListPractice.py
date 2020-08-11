@@ -1,3 +1,5 @@
+#This file has not been updated to class form.
+
 class Node():
 
     def __init__(self, data):

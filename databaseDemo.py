@@ -37,30 +37,31 @@ class Database():
 
 
 def main():
-    db = Database(10000)
+  limit = 100
+  db = Database(limit)
 
-    start_time = time.time()
-    for i in range(10000):
-        db.insert(int(rnd.random() * 100))
-    end_time = time.time()
-    print("Inserted values in {0} seconds.".format(end_time - start_time))
-
-    start_time = time.time()
-    db.display()
-    end_time = time.time()
-    print("Displayed values in {0} seconds.".format(end_time - start_time))
-    start_time = time.time()
-    print("Average Value: ", db.averageValue())
-    end_time = time.time()
-    print("Calculated average value in {0} seconds.".format(end_time - start_time))
-    start_time = time.time()
-    print("Min Value: ", db.minValue())
-    end_time = time.time()
-    print("Caculated min value in {0} seconds.".format(end_time - start_time))
-    start_time = time.time()
-    print("Max Value: ", db.maxValue())
-    end_time = time.time()
-    print("Calculated max value in {0} seconds.".format(end_time - start_time))
+  start_time = time.time()
+  for i in range(limit):
+      db.insert(int(rnd.random() * 100))
+  end_time = time.time()
+  print("Inserted {0} values in {1} seconds.".format(db.getSize(), end_time - start_time))
+  
+  start_time = time.time()
+  db.display()
+  end_time = time.time()
+  print("Displayed values in {0} seconds.".format(end_time - start_time))
+  start_time = time.time()
+  print("Average Value: ", db.averageValue())
+  end_time = time.time()
+  print("Calculated average value in {0} seconds.".format(end_time - start_time))
+  start_time = time.time()
+  print("Min Value: ", db.minValue())
+  end_time = time.time()
+  print("Caculated min value in {0} seconds.".format(end_time - start_time))
+  start_time = time.time()
+  print("Max Value: ", db.maxValue())
+  end_time = time.time()
+  print("Calculated max value in {0} seconds.".format(end_time - start_time))
 
 
 if __name__ == "__main__":
