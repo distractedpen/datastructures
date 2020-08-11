@@ -12,15 +12,6 @@ class HashTable():
         self.t = [None] * self.MAXSIZE
         self.size = 0
 
-##    def __iter__(self):
-##        self.i = 0
-##        return self
-##
-##    def __next__(self):
-##        n = self.t[self.i]
-##        self.i += 1
-##        return n
-
     def getSize(self):
         return self.size
         
@@ -47,8 +38,6 @@ class HashTable():
                 return print("{0} Not Found.".format(data))
         self.t[key] = None
         self.size -= 1
-                
-        
 
     def lookup(self, data):
         key = self.hashCode(data)
